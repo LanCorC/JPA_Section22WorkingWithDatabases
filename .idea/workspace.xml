@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="23dae86f-43d4-4f4d-8395-d7eab9a320c6" name="Changes" comment="Section 22.374(Working with Databases: JPA with Related Tables):&#10;added Album entity,&#10;&#10;introduced to relational decorators and functionalities, translating knowledge of foreign keys to JPA. added annotations such as: OneToMany to define this entity is a parent, JoinColumn to define property to be 'foreign key' in children, GeneratedValue and strategy to differentiate from foreign key and primary key of a child entity;&#10;&#10;added functionalities such as: making child entity implement Comparable&lt;Entity&gt; for parent's removeDuplicates(); added parent's addAlbum() as a way to add a child">
-      <change afterPath="$PROJECT_DIR$/src/MainQuery.java" afterDir="false" />
+    <list default="true" id="23dae86f-43d4-4f4d-8395-d7eab9a320c6" name="Changes" comment="Section 22.375(Working with Databases: JPA Queries, JPQL): introduced to JPQL for database queries, and how to query with RegEx">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainQuery.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715753454542</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Section 22.375(Working with Databases: JPA Queries, JPQL): introduced to JPQL for database queries, and how to query with RegEx">
+      <created>1715764653985</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1715764653985</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -129,6 +136,7 @@
     <MESSAGE value="Section 22.372(Working with Databases: Introduction to JPA and ORM):&#10;introduction to JPA, ORM concepts&#10;&#10;writing up demonstration of an Entity" />
     <MESSAGE value="Section 22.373(Working with Databases: JPA in action):&#10;set-up for Hibernate provider as demonstration; &#10;&#10;to use META-INF/ for persistence.xml, as well as to include META-INF to Run config of the Main of calling code&#10;&#10;played around with entityManager CRUD and real-time database changes" />
     <MESSAGE value="Section 22.374(Working with Databases: JPA with Related Tables):&#10;added Album entity,&#10;&#10;introduced to relational decorators and functionalities, translating knowledge of foreign keys to JPA. added annotations such as: OneToMany to define this entity is a parent, JoinColumn to define property to be 'foreign key' in children, GeneratedValue and strategy to differentiate from foreign key and primary key of a child entity;&#10;&#10;added functionalities such as: making child entity implement Comparable&lt;Entity&gt; for parent's removeDuplicates(); added parent's addAlbum() as a way to add a child" />
-    <option name="LAST_COMMIT_MESSAGE" value="Section 22.374(Working with Databases: JPA with Related Tables):&#10;added Album entity,&#10;&#10;introduced to relational decorators and functionalities, translating knowledge of foreign keys to JPA. added annotations such as: OneToMany to define this entity is a parent, JoinColumn to define property to be 'foreign key' in children, GeneratedValue and strategy to differentiate from foreign key and primary key of a child entity;&#10;&#10;added functionalities such as: making child entity implement Comparable&lt;Entity&gt; for parent's removeDuplicates(); added parent's addAlbum() as a way to add a child" />
+    <MESSAGE value="Section 22.375(Working with Databases: JPA Queries, JPQL): introduced to JPQL for database queries, and how to query with RegEx" />
+    <option name="LAST_COMMIT_MESSAGE" value="Section 22.375(Working with Databases: JPA Queries, JPQL): introduced to JPQL for database queries, and how to query with RegEx" />
   </component>
 </project>
