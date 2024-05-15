@@ -1,3 +1,5 @@
+package music;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -11,7 +13,7 @@ public class Artist {
     @Column(name="artist_id")
     private int artistId;
 
-    @Column
+    @Column(name="artist_name")
     private String artistName;
 
     public Artist() {
@@ -36,7 +38,7 @@ public class Artist {
 
     @Override
     public String toString() {
-        return "Artist{" +
+        return "music.Artist{" +
                 "artistId=" + artistId +
                 ", artistName='" + artistName + '\'' +
                 '}';
