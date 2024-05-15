@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="23dae86f-43d4-4f4d-8395-d7eab9a320c6" name="Changes" comment="Section 22.375(Working with Databases: JPA Queries, JPQL): introduced to JPQL for database queries, and how to query with RegEx">
+    <list default="true" id="23dae86f-43d4-4f4d-8395-d7eab9a320c6" name="Changes" comment="Section 22.376(Working with Databases: JPA Queries, JPQL Joins):&#10;introduced to Tuple as a jakarta.persistence class for retrieving specific data from queries; demonstrated ability to use field aliases for readable code on retrieving data from tuples&#10;&#10;demonstrated receiving a Stream&lt;Tuple&gt; from a query and what it looks like to process tuple indexes;&#10;&#10;demonstrated JPQL joining through the parent class field (list)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MainQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainQuery.java" afterDir="false" />
     </list>
@@ -118,7 +118,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715764653985</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Section 22.376(Working with Databases: JPA Queries, JPQL Joins):&#10;introduced to Tuple as a jakarta.persistence class for retrieving specific data from queries; demonstrated ability to use field aliases for readable code on retrieving data from tuples&#10;&#10;demonstrated receiving a Stream&lt;Tuple&gt; from a query and what it looks like to process tuple indexes;&#10;&#10;demonstrated JPQL joining through the parent class field (list)">
+      <created>1715766294472</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1715766294472</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -137,6 +144,7 @@
     <MESSAGE value="Section 22.373(Working with Databases: JPA in action):&#10;set-up for Hibernate provider as demonstration; &#10;&#10;to use META-INF/ for persistence.xml, as well as to include META-INF to Run config of the Main of calling code&#10;&#10;played around with entityManager CRUD and real-time database changes" />
     <MESSAGE value="Section 22.374(Working with Databases: JPA with Related Tables):&#10;added Album entity,&#10;&#10;introduced to relational decorators and functionalities, translating knowledge of foreign keys to JPA. added annotations such as: OneToMany to define this entity is a parent, JoinColumn to define property to be 'foreign key' in children, GeneratedValue and strategy to differentiate from foreign key and primary key of a child entity;&#10;&#10;added functionalities such as: making child entity implement Comparable&lt;Entity&gt; for parent's removeDuplicates(); added parent's addAlbum() as a way to add a child" />
     <MESSAGE value="Section 22.375(Working with Databases: JPA Queries, JPQL): introduced to JPQL for database queries, and how to query with RegEx" />
-    <option name="LAST_COMMIT_MESSAGE" value="Section 22.375(Working with Databases: JPA Queries, JPQL): introduced to JPQL for database queries, and how to query with RegEx" />
+    <MESSAGE value="Section 22.376(Working with Databases: JPA Queries, JPQL Joins):&#10;introduced to Tuple as a jakarta.persistence class for retrieving specific data from queries; demonstrated ability to use field aliases for readable code on retrieving data from tuples&#10;&#10;demonstrated receiving a Stream&lt;Tuple&gt; from a query and what it looks like to process tuple indexes;&#10;&#10;demonstrated JPQL joining through the parent class field (list)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Section 22.376(Working with Databases: JPA Queries, JPQL Joins):&#10;introduced to Tuple as a jakarta.persistence class for retrieving specific data from queries; demonstrated ability to use field aliases for readable code on retrieving data from tuples&#10;&#10;demonstrated receiving a Stream&lt;Tuple&gt; from a query and what it looks like to process tuple indexes;&#10;&#10;demonstrated JPQL joining through the parent class field (list)" />
   </component>
 </project>
