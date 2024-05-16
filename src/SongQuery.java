@@ -2,7 +2,12 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.Persistence;
 import jakarta.persistence.Query;
 import jakarta.persistence.Tuple;
+import jakarta.persistence.criteria.CriteriaBuilder;
+import jakarta.persistence.criteria.CriteriaQuery;
+import jakarta.persistence.criteria.Root;
+import music.Album;
 import music.Artist;
+import music.Song;
 
 import java.util.List;
 import java.util.stream.Stream;
@@ -14,8 +19,10 @@ public class SongQuery {
              EntityManager em = emf.createEntityManager()
         ) {
             var transaction = em.getTransaction();
-            allCandidates = getArtistsWithSongJPQLstreamlined(em, "%Soul%");
+//            allCandidates = getArtistsWithSongJPQLstreamlined(em, "%Soul%");
+            allCandidates = getArtistsWithSongBuilder(em, "%Soul%");
             allCandidates.forEach(System.out::println);
+            System.out.println("Output size: " + allCandidates.size());
             transaction.commit();
         } catch(Exception e) {
             System.err.println("Something went wrong!");
@@ -35,6 +42,18 @@ public class SongQuery {
         Query qr = em.createQuery(jpql, Tuple.class);
         qr.setParameter(1, matchedValue);
         return qr.getResultList();
+    }
+
+    //Bonus challenge:
+    public static List<Tuple> getArtistsWithSongBuilder(EntityManager em, String matchedValue) {
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<Tuple> cq = cb.createQuery(Tuple.class);
+        Root<Artist> rootArt = cq.from(Artist.class);
+        Root<Album> rootAlb = cq.from(Album.class);
+        Root<Song> rootSon = cq.from(Song.class);
+        cq.multiselect(rootArt.get("artistName"),rootAlb.get("albumName"),rootSon.get("songTitle")).
+                where(cb.like(rootSon.get("songTitle"), matchedValue));
+        return em.createQuery(cq).getResultList();
     }
 
 
