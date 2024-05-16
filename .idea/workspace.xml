@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="23dae86f-43d4-4f4d-8395-d7eab9a320c6" name="Changes" comment="Section 22.378(Working with Databases: JPA Challenge):&#10;Challenge complete!&#10;Implemented new JPA Entity, Song, with full functionality. &#10;Edited Entity Album with parent decorators, and .toString for child Song&#10;Implemented SongQuery to house the methods for this challenge.&#10;Implemented method to retrieve artists using JPQL where songTitle matched RegEx.&#10;Implemented an alternate version that strictly prints the artistName, albumName, and songName of the songTitle match through jakarta.persistence.Tuple output.">
+    <list default="true" id="23dae86f-43d4-4f4d-8395-d7eab9a320c6" name="Changes" comment="Section 22.378(Working with Databases: JPA Challenge):&#10;Bonus challenge progress so far.&#10;&#10;issues: getArtistsWithSongBuilder() outputs too many results. Suspected: artistSize * albumSize * songsStringMatch amount of Tuple objects (3 192 408 results), when I just want the one artist, the one album, for each song">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SongQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SongQuery.java" afterDir="false" />
     </list>
@@ -141,7 +141,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715828232143</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Section 22.378(Working with Databases: JPA Challenge):&#10;Bonus challenge progress so far.&#10;&#10;issues: getArtistsWithSongBuilder() outputs too many results. Suspected: artistSize * albumSize * songsStringMatch amount of Tuple objects (3 192 408 results), when I just want the one artist, the one album, for each song">
+      <created>1715829829386</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1715829829386</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -162,6 +169,7 @@
     <MESSAGE value="Section 22.375(Working with Databases: JPA Queries, JPQL): introduced to JPQL for database queries, and how to query with RegEx" />
     <MESSAGE value="Section 22.376(Working with Databases: JPA Queries, JPQL Joins):&#10;introduced to Tuple as a jakarta.persistence class for retrieving specific data from queries; demonstrated ability to use field aliases for readable code on retrieving data from tuples&#10;&#10;demonstrated receiving a Stream&lt;Tuple&gt; from a query and what it looks like to process tuple indexes;&#10;&#10;demonstrated JPQL joining through the parent class field (list)" />
     <MESSAGE value="Section 22.378(Working with Databases: JPA Challenge):&#10;Challenge complete!&#10;Implemented new JPA Entity, Song, with full functionality. &#10;Edited Entity Album with parent decorators, and .toString for child Song&#10;Implemented SongQuery to house the methods for this challenge.&#10;Implemented method to retrieve artists using JPQL where songTitle matched RegEx.&#10;Implemented an alternate version that strictly prints the artistName, albumName, and songName of the songTitle match through jakarta.persistence.Tuple output." />
-    <option name="LAST_COMMIT_MESSAGE" value="Section 22.378(Working with Databases: JPA Challenge):&#10;Challenge complete!&#10;Implemented new JPA Entity, Song, with full functionality. &#10;Edited Entity Album with parent decorators, and .toString for child Song&#10;Implemented SongQuery to house the methods for this challenge.&#10;Implemented method to retrieve artists using JPQL where songTitle matched RegEx.&#10;Implemented an alternate version that strictly prints the artistName, albumName, and songName of the songTitle match through jakarta.persistence.Tuple output." />
+    <MESSAGE value="Section 22.378(Working with Databases: JPA Challenge):&#10;Bonus challenge progress so far.&#10;&#10;issues: getArtistsWithSongBuilder() outputs too many results. Suspected: artistSize * albumSize * songsStringMatch amount of Tuple objects (3 192 408 results), when I just want the one artist, the one album, for each song" />
+    <option name="LAST_COMMIT_MESSAGE" value="Section 22.378(Working with Databases: JPA Challenge):&#10;Bonus challenge progress so far.&#10;&#10;issues: getArtistsWithSongBuilder() outputs too many results. Suspected: artistSize * albumSize * songsStringMatch amount of Tuple objects (3 192 408 results), when I just want the one artist, the one album, for each song" />
   </component>
 </project>
