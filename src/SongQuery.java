@@ -15,15 +15,36 @@ import java.util.stream.Stream;
 
 public class SongQuery {
     public static void main(String[] args) {
-        List<Artist> allCandidates = null;
-        try (var emf = Persistence.createEntityManagerFactory("dev.lpa.music");
+//        List<Artist> allCandidates = null;
+        try (var emf = Persistence.createEntityManagerFactory(
+                "dev.lpa.music");
              EntityManager em = emf.createEntityManager()
         ) {
             var transaction = em.getTransaction();
+            transaction.begin();
+            String dashedString = "-".repeat(19);
+            String word = "Soul";
 //            allCandidates = getArtistsWithSongJPQLstreamlined(em, "%Soul%");
-            allCandidates = getArtistsWithSongBuilder(em, "%Soul%");
-//            allCandidates = getArtistsWithSongJPQL(em, "%Soul%");
-            allCandidates.forEach(System.out::println);
+//            allCandidates = getArtistsWithSongBuilder(em, "%Soul%");
+            var allCandidates = getArtistsWithSongJPQL(em, "%"+word+"%");
+//            allCandidates.forEach(System.out::println);
+            System.out.printf("%-30s %-65s %s%n", "Artist", "Album", "Song Title");
+            System.out.printf("%1$-30s %1$-65s %1$s%n", dashedString);
+
+            allCandidates.forEach(a -> {
+                String artistName = a.getArtistName();
+                a.getAlbums().forEach(b-> {
+                    String albumName = b.getAlbumName();
+                    b.getSongs().forEach(s->{
+                        String songTitle = s.getSongTitle();
+                        if(songTitle.contains(word)){
+                            System.out.printf("%-30s %-65s %s%n",
+                                    artistName, albumName, songTitle);
+                        }
+                    });
+                });
+            });
+
             System.out.println("Output size: " + allCandidates.size());
             transaction.commit();
         } catch(Exception e) {
@@ -33,7 +54,7 @@ public class SongQuery {
     }
 
     public static List<Artist> getArtistsWithSongJPQL(EntityManager em, String matchedValue) {
-        String jpql = "SELECT DISTINCT a FROM Artist a JOIN albums album JOIN songs song WHERE song.songTitle LIKE ?1";
+        String jpql = "SELECT a FROM Artist a JOIN albums album JOIN songs song WHERE song.songTitle LIKE ?1";
 //        String jpql = "SELECT a.artistName, album.albumName, song.songTitle FROM Artist a JOIN albums album JOIN songs song WHERE song.songTitle LIKE ?1";
         Query qr = em.createQuery(jpql, Artist.class);
         qr.setParameter(1, matchedValue);

@@ -10,7 +10,7 @@ public class Album implements Comparable<Album> {
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name="album_id")
-    List<Song> songs = new ArrayList<>();
+    private List<Song> songs = new ArrayList<>();
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -51,12 +51,13 @@ public class Album implements Comparable<Album> {
     @Override
     public String toString() {
         songs.sort(Comparator.comparingInt(Song::getTrackNo));
-        String songsString = new StringJoiner("\n").add(songs.toString()).toString();
+        StringJoiner stringJoiner = new StringJoiner("\n");
+        songs.forEach(a->stringJoiner.add(a.toString()));
 
         return "Album{" +
                 "albumId=" + albumId +
                 ", albumName='" + albumName + '\'' +
-                ", songs=" + songsString +
+                ", songs=" + stringJoiner.toString() +
                 '}';
     }
 

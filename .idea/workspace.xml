@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="23dae86f-43d4-4f4d-8395-d7eab9a320c6" name="Changes" comment="Section 22.378(Working with Databases: JPA Challenge):&#10;Bonus challenge progress so far.&#10;&#10;issues: getArtistsWithSongBuilder() outputs too many results. Suspected: artistSize * albumSize * songsStringMatch amount of Tuple objects (3 192 408 results), when I just want the one artist, the one album, for each song">
+    <list default="true" id="23dae86f-43d4-4f4d-8395-d7eab9a320c6" name="Changes" comment="Section 22.378(Working with Databases: JPA Challenge):&#10;Bonus challenge progress so far 2.&#10;&#10;not much changed; there are '18' songs matching for '%Soul%'. noticed that JPQL would output '18', when there are only 12 artists. It was a SELECT * FROM artists, so it would duplicate some artists.&#10;&#10;still cannot resolve CriteriaBuilder to select for only Artists of Songs where an Album had a Song matching '%Soul%'">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SongQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SongQuery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/music/Album.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/music/Album.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,8 +87,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.SongQuery" />
-        <item itemvalue="Application.MainQuery" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.MainQuery" />
       </list>
     </recent_temporary>
   </component>
@@ -148,7 +150,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715829829386</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Section 22.378(Working with Databases: JPA Challenge):&#10;Bonus challenge progress so far 2.&#10;&#10;not much changed; there are '18' songs matching for '%Soul%'. noticed that JPQL would output '18', when there are only 12 artists. It was a SELECT * FROM artists, so it would duplicate some artists.&#10;&#10;still cannot resolve CriteriaBuilder to select for only Artists of Songs where an Album had a Song matching '%Soul%'">
+      <created>1715832420829</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1715832420829</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -170,6 +179,7 @@
     <MESSAGE value="Section 22.376(Working with Databases: JPA Queries, JPQL Joins):&#10;introduced to Tuple as a jakarta.persistence class for retrieving specific data from queries; demonstrated ability to use field aliases for readable code on retrieving data from tuples&#10;&#10;demonstrated receiving a Stream&lt;Tuple&gt; from a query and what it looks like to process tuple indexes;&#10;&#10;demonstrated JPQL joining through the parent class field (list)" />
     <MESSAGE value="Section 22.378(Working with Databases: JPA Challenge):&#10;Challenge complete!&#10;Implemented new JPA Entity, Song, with full functionality. &#10;Edited Entity Album with parent decorators, and .toString for child Song&#10;Implemented SongQuery to house the methods for this challenge.&#10;Implemented method to retrieve artists using JPQL where songTitle matched RegEx.&#10;Implemented an alternate version that strictly prints the artistName, albumName, and songName of the songTitle match through jakarta.persistence.Tuple output." />
     <MESSAGE value="Section 22.378(Working with Databases: JPA Challenge):&#10;Bonus challenge progress so far.&#10;&#10;issues: getArtistsWithSongBuilder() outputs too many results. Suspected: artistSize * albumSize * songsStringMatch amount of Tuple objects (3 192 408 results), when I just want the one artist, the one album, for each song" />
-    <option name="LAST_COMMIT_MESSAGE" value="Section 22.378(Working with Databases: JPA Challenge):&#10;Bonus challenge progress so far.&#10;&#10;issues: getArtistsWithSongBuilder() outputs too many results. Suspected: artistSize * albumSize * songsStringMatch amount of Tuple objects (3 192 408 results), when I just want the one artist, the one album, for each song" />
+    <MESSAGE value="Section 22.378(Working with Databases: JPA Challenge):&#10;Bonus challenge progress so far 2.&#10;&#10;not much changed; there are '18' songs matching for '%Soul%'. noticed that JPQL would output '18', when there are only 12 artists. It was a SELECT * FROM artists, so it would duplicate some artists.&#10;&#10;still cannot resolve CriteriaBuilder to select for only Artists of Songs where an Album had a Song matching '%Soul%'" />
+    <option name="LAST_COMMIT_MESSAGE" value="Section 22.378(Working with Databases: JPA Challenge):&#10;Bonus challenge progress so far 2.&#10;&#10;not much changed; there are '18' songs matching for '%Soul%'. noticed that JPQL would output '18', when there are only 12 artists. It was a SELECT * FROM artists, so it would duplicate some artists.&#10;&#10;still cannot resolve CriteriaBuilder to select for only Artists of Songs where an Album had a Song matching '%Soul%'" />
   </component>
 </project>
