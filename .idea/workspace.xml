@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="23dae86f-43d4-4f4d-8395-d7eab9a320c6" name="Changes" comment="Section 22.376(Working with Databases: JPA Queries, JPQL Joins):&#10;introduced to Tuple as a jakarta.persistence class for retrieving specific data from queries; demonstrated ability to use field aliases for readable code on retrieving data from tuples&#10;&#10;demonstrated receiving a Stream&lt;Tuple&gt; from a query and what it looks like to process tuple indexes;&#10;&#10;demonstrated JPQL joining through the parent class field (list)">
+      <change afterPath="$PROJECT_DIR$/src/SongQuery.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/music/Song.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MainQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainQuery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/music/Album.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/music/Album.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +47,8 @@
     "last_opened_file_path": "C:/Users/lance/Documents/CodingJava/JPA_Section22WorkingWithDatabases/src/META-INF",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.17",
-    "project.structure.side.proportion": "0.2"
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -56,7 +60,7 @@
       <recent name="music" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MainQuery">
+  <component name="RunManager" selected="Application.SongQuery">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <classpathModifications>
         <entry path="C:\Users\lance\Documents\CodingJava\JPA_Section22WorkingWithDatabases\src\META-INF" />
@@ -74,8 +78,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SongQuery" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="SongQuery" />
+      <module name="JPA_Section22WorkingWithDatabases" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SongQuery" />
         <item itemvalue="Application.MainQuery" />
         <item itemvalue="Application.Main" />
       </list>

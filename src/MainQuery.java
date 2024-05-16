@@ -26,15 +26,15 @@ public class MainQuery {
             artists.forEach(System.out::println);
 
             System.out.println("----------------------------");
-            Stream<Artist> sartists = getArtistsSQL(em, "Bl%");
-            var map = sartists.limit(10)
-                    .collect(Collectors.toMap(
-                            Artist::getArtistName,
-                            (a) -> a.getAlbums().size(),
-                            Integer::sum,
-                            TreeMap::new
-                    ));
-            map.forEach((k, v) -> System.out.println(k + " : " + v));
+//            Stream<Artist> sartists = getArtistsSQL(em, "Bl%");
+//            var map = sartists.limit(10)
+//                    .collect(Collectors.toMap(
+//                            Artist::getArtistName,
+//                            (a) -> a.getAlbums().size(),
+//                            Integer::sum,
+//                            TreeMap::new
+//                    ));
+//            map.forEach((k, v) -> System.out.println(k + " : " + v));
 //            var names = getArtistsNames(em, "%Stev%");
 //            names.map(
 //                    a-> new Artist(

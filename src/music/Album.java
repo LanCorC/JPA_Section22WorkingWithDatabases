@@ -2,9 +2,15 @@ package music;
 
 import jakarta.persistence.*;
 
+import java.util.*;
+
 @Entity
 @Table(name = "albums")
 public class Album implements Comparable<Album> {
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name="album_id")
+    List<Song> songs = new ArrayList<>();
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,11 +40,23 @@ public class Album implements Comparable<Album> {
         this.albumName = albumName;
     }
 
+    public List<Song> getSongs() {
+        return songs;
+    }
+
+    public void addSong(String songName) {
+        songs.add(new Song(songName));
+    }
+
     @Override
     public String toString() {
+        songs.sort(Comparator.comparingInt(Song::getTrackNo));
+        String songsString = new StringJoiner("\n").add(songs.toString()).toString();
+
         return "Album{" +
                 "albumId=" + albumId +
                 ", albumName='" + albumName + '\'' +
+                ", songs=" + songsString +
                 '}';
     }
 
