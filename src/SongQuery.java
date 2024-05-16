@@ -2,9 +2,9 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.Persistence;
 import jakarta.persistence.Query;
 import jakarta.persistence.Tuple;
-import jakarta.persistence.criteria.CriteriaBuilder;
-import jakarta.persistence.criteria.CriteriaQuery;
-import jakarta.persistence.criteria.Root;
+import jakarta.persistence.criteria.*;
+import jakarta.persistence.metamodel.EntityType;
+import jakarta.persistence.metamodel.Metamodel;
 import music.Album;
 import music.Artist;
 import music.Song;
@@ -25,11 +25,12 @@ public class SongQuery {
             String dashedString = "-".repeat(19);
             String word = "Soul";
 //            allCandidates = getArtistsWithSongJPQLstreamlined(em, "%Soul%");
-//            allCandidates = getArtistsWithSongBuilder(em, "%Soul%");
+//            var allCandidates = getArtistsWithSongBuilder(em, "%"+word+"%");
             var allCandidates = getArtistsWithSongJPQL(em, "%"+word+"%");
 //            allCandidates.forEach(System.out::println);
             System.out.printf("%-30s %-65s %s%n", "Artist", "Album", "Song Title");
             System.out.printf("%1$-30s %1$-65s %1$s%n", dashedString);
+
 
             allCandidates.forEach(a -> {
                 String artistName = a.getArtistName();
@@ -45,7 +46,14 @@ public class SongQuery {
                 });
             });
 
-            System.out.println("Output size: " + allCandidates.size());
+
+            System.out.printf("%-30s %-65s %s%n", "Artist", "Album", "Song Title");
+            System.out.printf("%1$-30s %1$-65s %1$s%n", dashedString);
+            var aBllCandidates = getArtistsWithSongBuilder(em, "%"+word+"%");
+            aBllCandidates.forEach(m->
+                    System.out.printf("%-30s %-65s %s%n",
+                            (String) m[0], (String) m[1], (String) m[2]));
+            System.out.println("Output size: " + aBllCandidates.size());
             transaction.commit();
         } catch(Exception e) {
             System.err.println("Something went wrong!");
@@ -69,16 +77,22 @@ public class SongQuery {
     }
 
     //Bonus challenge:
-    public static List<Artist> getArtistsWithSongBuilder(EntityManager em, String matchedValue) {
+    public static List<Object[]> getArtistsWithSongBuilder(EntityManager em, String matchedValue) {
         CriteriaBuilder cb = em.getCriteriaBuilder();
-        CriteriaQuery<Artist> cq = cb.createQuery(Artist.class);
-        Root<Artist> rootArt = cq.from(Artist.class);
-        Root<Album> rootAlb = cq.from(Album.class);
-        Root<Song> rootSon = cq.from(Song.class);
-//        cq.multiselect(rootArt.get("artistName"),rootAlb.get("albumName"),rootSon.get("songTitle")).
-//                where(cb.like(rootSon.get("songTitle"), matchedValue));
-        cq.select(rootArt)
-                .where(cb.like(rootSon.get("songTitle"), matchedValue));
+        CriteriaQuery<Object[]> cq = cb.createQuery(Object[].class);
+
+        Root<Artist> root = cq.from(Artist.class);
+        Join<Artist, Album> albumJoin = root.
+                join("albums", JoinType.INNER);
+        Join<Album, Song> songJoin = albumJoin.
+                join("songs", JoinType.INNER);
+        cq.multiselect(
+                root.get("artistName"),
+                albumJoin.get("albumName"),
+                songJoin.get("songTitle")
+                        )
+                .where(cb.like(songJoin.get("songTitle"), matchedValue))
+                .orderBy(cb.asc(root.get("artistName")));
         return em.createQuery(cq).getResultList();
     }
 

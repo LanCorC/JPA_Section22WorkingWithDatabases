@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="23dae86f-43d4-4f4d-8395-d7eab9a320c6" name="Changes" comment="Section 22.378(Working with Databases: JPA Challenge):&#10;Bonus challenge progress so far 2.&#10;&#10;not much changed; there are '18' songs matching for '%Soul%'. noticed that JPQL would output '18', when there are only 12 artists. It was a SELECT * FROM artists, so it would duplicate some artists.&#10;&#10;still cannot resolve CriteriaBuilder to select for only Artists of Songs where an Album had a Song matching '%Soul%'">
+    <list default="true" id="23dae86f-43d4-4f4d-8395-d7eab9a320c6" name="Changes" comment="Section 22.378(Working with Databases: JPA Challenge):&#10;reviewing my code after seeing Tim's solution:&#10;&#10;fixed my Album .toString() formatting error, added his result manipulation (cosmetic) on SongQuery,&#10;&#10;also adopted for 'var' with JPA query results, as to not require switching between List&lt;Artist&gt; List&lt;Tuple&gt; or List&lt;String&gt;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SongQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SongQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/music/Album.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/music/Album.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +155,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715832420829</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Section 22.378(Working with Databases: JPA Challenge):&#10;reviewing my code after seeing Tim's solution:&#10;&#10;fixed my Album .toString() formatting error, added his result manipulation (cosmetic) on SongQuery,&#10;&#10;also adopted for 'var' with JPA query results, as to not require switching between List&lt;Artist&gt; List&lt;Tuple&gt; or List&lt;String&gt;">
+      <created>1715833966822</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1715833966822</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -180,6 +185,7 @@
     <MESSAGE value="Section 22.378(Working with Databases: JPA Challenge):&#10;Challenge complete!&#10;Implemented new JPA Entity, Song, with full functionality. &#10;Edited Entity Album with parent decorators, and .toString for child Song&#10;Implemented SongQuery to house the methods for this challenge.&#10;Implemented method to retrieve artists using JPQL where songTitle matched RegEx.&#10;Implemented an alternate version that strictly prints the artistName, albumName, and songName of the songTitle match through jakarta.persistence.Tuple output." />
     <MESSAGE value="Section 22.378(Working with Databases: JPA Challenge):&#10;Bonus challenge progress so far.&#10;&#10;issues: getArtistsWithSongBuilder() outputs too many results. Suspected: artistSize * albumSize * songsStringMatch amount of Tuple objects (3 192 408 results), when I just want the one artist, the one album, for each song" />
     <MESSAGE value="Section 22.378(Working with Databases: JPA Challenge):&#10;Bonus challenge progress so far 2.&#10;&#10;not much changed; there are '18' songs matching for '%Soul%'. noticed that JPQL would output '18', when there are only 12 artists. It was a SELECT * FROM artists, so it would duplicate some artists.&#10;&#10;still cannot resolve CriteriaBuilder to select for only Artists of Songs where an Album had a Song matching '%Soul%'" />
-    <option name="LAST_COMMIT_MESSAGE" value="Section 22.378(Working with Databases: JPA Challenge):&#10;Bonus challenge progress so far 2.&#10;&#10;not much changed; there are '18' songs matching for '%Soul%'. noticed that JPQL would output '18', when there are only 12 artists. It was a SELECT * FROM artists, so it would duplicate some artists.&#10;&#10;still cannot resolve CriteriaBuilder to select for only Artists of Songs where an Album had a Song matching '%Soul%'" />
+    <MESSAGE value="Section 22.378(Working with Databases: JPA Challenge):&#10;reviewing my code after seeing Tim's solution:&#10;&#10;fixed my Album .toString() formatting error, added his result manipulation (cosmetic) on SongQuery,&#10;&#10;also adopted for 'var' with JPA query results, as to not require switching between List&lt;Artist&gt; List&lt;Tuple&gt; or List&lt;String&gt;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Section 22.378(Working with Databases: JPA Challenge):&#10;reviewing my code after seeing Tim's solution:&#10;&#10;fixed my Album .toString() formatting error, added his result manipulation (cosmetic) on SongQuery,&#10;&#10;also adopted for 'var' with JPA query results, as to not require switching between List&lt;Artist&gt; List&lt;Tuple&gt; or List&lt;String&gt;" />
   </component>
 </project>
